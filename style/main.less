@@ -1,0 +1,139 @@
+/*********************************
+************** Reset *************
+*********************************/
+html { font-size: 62.5%; line-height: 1.3em; }
+body { .margin; .padding; font-family: @defaultFont; font-size: 1em; color: @black; }
+a {
+    text-decoration: none;
+    img { border: 0; }
+}
+a:hover { text-decoration: underline; }
+
+
+/*********************************
+*********** Set Margin ***********
+*********************************/
+h1, .h1-like {
+    margin: 1em 0 1em 0;
+    font-size: 4.2em; line-height: 1.33334em;
+}
+h2, .h2-like {
+    margin: 1em 0 1em 0;
+    font-size: 2.8em; line-height: 1.25em;
+}
+h3, .h3-like {
+    margin: 1em 0 1em 0;
+    font-size: 2.1em; line-height: 1.33334em;
+}
+h4, .h4-like { font-size: 1.8em; line-height: 1.33334em; }
+h5, .h5-like { font-size: 1.4em; line-height: 1.33334em; }
+p, p.bodytext { .margin(1, 0); }
+td p, td p.bodytext { .margin; }
+ul {
+    .margin; .padding(.5, 1, .5, 2);
+    li { .margin(.5, 0); }
+}
+p, li, td, th, textarea, caption, pre, blockquote, label, input, select, textarea, address { font-size: @defaultFontSize; line-height: @defaultLineHeight/10em; }
+li li, li p, td p, th p, li h1, li h2, li h3, li h4, li h5, li h6, button { font-size: 100%; }
+input, select, textarea { font-family: @defaultFont; }
+
+
+/*********************************
+************ General *************
+*********************************/
+.page { margin: 0 auto; width: @maxWidth; }
+.nav {
+    .padding(0);
+    * { .inline-block; .padding(0,0.5); }
+    a { font-size: 1.3em; text-decoration: none; }
+    a:hover { text-decoration: none; }
+}
+.block { .margin(2,0); }
+
+
+/*********************************
+************* HEADER *************
+*********************************/
+.header { .margin(0,0,3,0); }
+
+.logo { float: left; .inline-block; .margin(.9, .9, 0, 0); }
+
+.topNav {
+    .inline-block; float: right; .margin; .padding; width: 500px; height: 43px; list-style: none;
+    text-align: right;
+    * { text-align: left; }
+    > li { position: relative; .inline-block; .margin; .padding(1.5,.5,1,.5); }
+    > a { .inline-block; .padding(.5,2,.5,.5); }
+}
+
+.mainNav { .margin(1,0); clear: both; }
+
+.secondLevel li { display: block; }
+
+.column > *:first-child { margin-top: 0; }
+
+
+/*********************************
+************* FOOTER *************
+*********************************/
+.footer { .margin(5,0,1,0); }
+.itemBot { float: left; .inline-block; }
+.menuBot { float: right; }
+
+
+/*********************************
+************* DEFAULT ************
+*********************************/
+.default {
+
+    /* --- Config --- */
+    @lightBlue: #2ba6cb;
+    @blue: #2284a1;
+    @gray: #d9d9d9;
+    /* -------------- */
+
+
+        /* ---- GENERAL ---- */
+
+    h1 { color: @blue; }
+    p { text-align: justify; }
+
+    .mainNav .secondLevel { background-color: rgba(255,255,255,0.9); border: solid 1px @gray; }
+    .secondLevel {
+        a { color: @blue; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    }
+    .topNav > a { background: transparent url(../images/general/puce-header.jpg) no-repeat 95% 10px; }
+    .nav a {  color: @lightBlue; }
+    .nav a:hover { color: @blue; }
+
+    .divider { .margin(3,0); width: 100%; height: 1px; border: 0; border-top: solid 1px @gray; }
+
+    .readNext {
+        .inline-block; float: right;
+        color: @lightBlue;
+        a { color: @lightBlue; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    }
+    .button {
+        a {
+            .padding(1,1.5); .border-radius; background-color: @lightBlue; border: solid 1px @blue; box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+            font-weight: bold; font-size: 1.5em; color: @white;
+        }
+        a:hover {
+            background-color: @blue;
+            text-decoration: none;
+        }
+    }
+    .blocfond {
+        *:first-child { .margin(0,0,1.5); }
+        .margin(2,0); .padding(2); background-color: #f2f2f2; border: 1px solid @gray;
+    }
+    .sideNav {
+        .padding(0);
+        list-style-type: none;
+
+        a { color: @lightBlue; text-decoration: none; }
+        a:hover { color: @blue; text-decoration: none; }
+    }
+}

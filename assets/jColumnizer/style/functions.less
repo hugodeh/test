@@ -1,0 +1,17 @@
+/*********************************
+********* Functions CSS3 *********
+*********************************/
+/*
+ * Function colonnes
+ * description : colonnage avec gestion du flux de texte
+ *
+ * url => http://www.alsacreations.com/tuto/lire/1557-les-multicolonnes-en-css3.html
+ */
+.columns (@nbColumns: 2, @paddingLeft: 3) {
+    -webkit-columns: @nbColumns;    // Chrome, Safari3.2, Android2.1
+       -moz-columns: @nbColumns;    // Firefox
+            columns: @nbColumns;    // IE10, Opera11.1
+    -webkit-column-gap: @marginSize * @paddingLeft * 1px;
+       -moz-column-gap: @marginSize * @paddingLeft * 1px;
+            column-gap: @marginSize * @paddingLeft * 1px;
+}

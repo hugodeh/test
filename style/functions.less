@@ -1,0 +1,196 @@
+/*********************************
+************ Functions ***********
+*********************************/
+.inline-block () {
+    display: inline-block;
+    vertical-align: top;
+}
+
+// https://github.com/Schepp/box-sizing-polyfill/blob/master/boxsizing.htc
+.box-sizing () {
+    -webkit-box-sizing : border-box; // Safari/Chrome, other WebKit
+    -moz-box-sizing    : border-box; // Firefox, other Gecko
+    box-sizing         : border-box; // Opera / IE 8+
+}
+
+/*
+ * Functions Margin
+ */
+.margin ( @topNumber: 0, @rightNumber: 0, @bottomNumber: 0, @leftNumber: 0 ) {
+    margin-top:    @marginSize * @topNumber * 1px;
+    margin-right:  @marginSize * @rightNumber * 1px;
+    margin-bottom: @marginSize * @bottomNumber * 1px;
+    margin-left:   @marginSize * @leftNumber * 1px;
+}
+
+.margin ( @topNumber: 0, @rightLeftNumber: 0, @bottomNumber: 0 ) {
+    margin-top:    @marginSize * @topNumber * 1px;
+    margin-right:  @marginSize * @rightLeftNumber * 1px;
+    margin-bottom: @marginSize * @bottomNumber * 1px;
+    margin-left:   @marginSize * @rightLeftNumber * 1px;
+}
+
+.margin ( @topBottomNumber: 0, @rightLeftNumber: 0 ) {
+    margin-top:    @marginSize * @topBottomNumber * 1px;
+    margin-right:  @marginSize * @rightLeftNumber * 1px;
+    margin-bottom: @marginSize * @topBottomNumber * 1px;
+    margin-left:   @marginSize * @rightLeftNumber * 1px;
+}
+
+.margin ( @topRightBottomLeftNumber: 0 ) {
+    margin-top:    @marginSize * @topRightBottomLeftNumber * 1px;
+    margin-right:  @marginSize * @topRightBottomLeftNumber * 1px;
+    margin-bottom: @marginSize * @topRightBottomLeftNumber * 1px;
+    margin-left:   @marginSize * @topRightBottomLeftNumber * 1px;
+}
+
+/*
+ * Functions padding
+ */
+.padding ( @topNumber: 0, @rightNumber: 0, @bottomNumber: 0, @leftNumber: 0 ) {
+    padding-top:    @marginSize * @topNumber * 1px;
+    padding-right:  @marginSize * @rightNumber * 1px;
+    padding-bottom: @marginSize * @bottomNumber * 1px;
+    padding-left:   @marginSize * @leftNumber * 1px;
+}
+
+.padding ( @topNumber: 0, @rightLeftNumber: 0, @bottomNumber: 0 ) {
+    padding-top:    @marginSize * @topNumber * 1px;
+    padding-right:  @marginSize * @rightLeftNumber * 1px;
+    padding-bottom: @marginSize * @bottomNumber * 1px;
+    padding-left:   @marginSize * @rightLeftNumber * 1px;
+}
+
+.padding ( @topBottomNumber: 0, @rightLeftNumber: 0 ) {
+    padding-top:    @marginSize * @topBottomNumber * 1px;
+    padding-right:  @marginSize * @rightLeftNumber * 1px;
+    padding-bottom: @marginSize * @topBottomNumber * 1px;
+    padding-left:   @marginSize * @rightLeftNumber * 1px;
+}
+
+.padding ( @topRightBottomLeftNumber: 0 ) {
+    padding-top:    @marginSize * @topRightBottomLeftNumber * 1px;
+    padding-right:  @marginSize * @topRightBottomLeftNumber * 1px;
+    padding-bottom: @marginSize * @topRightBottomLeftNumber * 1px;
+    padding-left:   @marginSize * @topRightBottomLeftNumber * 1px;
+}
+
+/*
+ * Function Grid
+ */
+.column-width ( @columnNumber: 1, @marginNumber: 0 ) {
+    width: (( @columnNumber * @columnWidth ) + ( @marginNumber * @marginSize )) * 1px
+}
+
+/*
+.percent-width ( @width, @parentWidth ) {
+    width: @width / @parentWidth * 100%;
+}
+*/
+
+/*********************************
+********* Functions CSS2 *********
+*********************************/
+/*
+ * @opacity float compris entre 0 à 1
+ */
+.opacity ( @opacity ) {
+    opacity: @opacity;
+    -ms-filter: e(%("progid:DXImageTransform.Microsoft.Alpha(opacity=%d)", (@opacity * 100))); // IE8 and IE9
+    filter: e(%("alpha(opacity = %d)", (@opacity * 100))); // IE6 and IE7
+}
+
+/*********************************
+********* Functions CSS3 *********
+*********************************/
+
+/*
+ * Functions Border Radius
+ */
+.border-radius ( @topLeftRadius : 0, @topRightRadius : 0, @bottomRightRadius : 0, @bottomLeftRadius : 0 ) {
+    -webkit-border-radius : (@topLeftRadius * 1px) (@topRightRadius * 1px) (@bottomRightRadius * 1px) (@bottomLeftRadius * 1px);
+    -moz-border-radius    : (@topLeftRadius * 1px) (@topRightRadius * 1px) (@bottomRightRadius * 1px) (@bottomLeftRadius * 1px);
+    -ms-border-radius     : (@topLeftRadius * 1px) (@topRightRadius * 1px) (@bottomRightRadius * 1px) (@bottomLeftRadius * 1px);
+    -o-border-radius      : (@topLeftRadius * 1px) (@topRightRadius * 1px) (@bottomRightRadius * 1px) (@bottomLeftRadius * 1px);
+    border-radius         : (@topLeftRadius * 1px) (@topRightRadius * 1px) (@bottomRightRadius * 1px) (@bottomLeftRadius * 1px);
+}
+
+.border-radius ( @radius : @defaultRadius ) {
+    -webkit-border-radius : @radius * 1px;
+    -moz-border-radius    : @radius * 1px;
+    -ms-border-radius     : @radius * 1px;
+    -o-border-radius      : @radius * 1px;
+    border-radius         : @radius * 1px;
+}
+
+/*
+ * Functions Box Shadow
+ */
+.box-shadow ( @a: 0 0 0 0 @black ) {
+    -webkit-box-shadow : @arguments;
+    -moz-box-shadow    : @arguments;
+    -ms-box-shadow     : @arguments;
+    -o-box-shadow      : @arguments;
+    box-shadow         : @arguments;
+}
+
+/*
+ * Functions Linear Gradient
+ */
+.linear-gradient-horizontal ( @startColor: @white, @endColor: @black ) {
+    // background-color: @endColor;
+    background-color: mix(@startColor, @endColor, 50%);
+
+    background-image: -webkit-linear-gradient(to right, @startColor 0, @endColor 100%); // Safari 5.1+, Chrome 10+
+    background-image:        -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image:    -moz-linear-gradient(to right, @startColor 0, @endColor 100%); // FF 3.6+
+    background-image:     -ms-linear-gradient(to right, @startColor 0, @endColor 100%); // IE10
+    background-image:      -o-linear-gradient(to right, @startColor 0, @endColor 100%); // Opera 11.10
+    background-image:         linear-gradient(to right, @startColor 0, @endColor 100%);
+    -ms-filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", @startColor, @endColor)); // IE8 and IE9
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", @startColor, @endColor)); // IE6 and IE7
+
+    background-repeat: repeat-x;
+}
+
+.linear-gradient-vertical ( @startColor: @white, @endColor: @black ) {
+    // background-color: @endColor;
+    background-color: mix(@startColor, @endColor, 50%);
+
+    background-image: -webkit-linear-gradient(to bottom, @startColor 0, @endColor 100%); // Safari 5.1+, Chrome 10+
+    background-image:        -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image:    -moz-linear-gradient(to bottom, @startColor 0, @endColor 100%); // FF 3.6+
+    background-image:     -ms-linear-gradient(to bottom, @startColor 0, @endColor 100%); // IE10
+    background-image:      -o-linear-gradient(to bottom, @startColor 0, @endColor 100%); // Opera 11.10
+    background-image:         linear-gradient(to bottom, @startColor 0, @endColor 100%);
+    -ms-filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", @startColor, @endColor)); // IE8 and IE9
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", @startColor, @endColor)); // IE6 and IE7
+
+    background-repeat: repeat-x;
+}
+
+.linear-gradient-radial ( @innerColor: @white, @outerColor: @black )  {
+    // background-color: @outerColor;
+    background-color: mix(@innerColor, @outerColor, 50%);
+
+    background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor); // Safari 5.1+, Chrome 10+
+    background-image:        -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor)); // Safari 4+, Chrome 2+
+    background-image:    -moz-radial-gradient(circle, @innerColor, @outerColor); // FF 3.6+
+    background-image:     -ms-radial-gradient(circle, @innerColor, @outerColor); // IE10
+    background-image:      -o-radial-gradient(circle, @innerColor, @outerColor); // Opera 11.10
+
+    background-repeat: no-repeat;
+}
+
+.linear-gradient ( @startColor: @white, @endColor: @black, @deg: 45 ) {
+    // background-color: @endColor;
+    background-color: mix(@startColor, @endColor, 50%);
+
+    background-image: -webkit-linear-gradient((@deg * 1deg), @startColor 0, @endColor 100%); // Safari 5.1+, Chrome 10+
+    background-image:    -moz-linear-gradient((@deg * 1deg), @startColor 0, @endColor 100%); // FF 3.6+
+    background-image:     -ms-linear-gradient((@deg * 1deg), @startColor 0, @endColor 100%); // IE10
+    background-image:      -o-linear-gradient((@deg * 1deg), @startColor 0, @endColor 100%); // Opera 11.10
+    background-image:         linear-gradient((@deg * 1deg), @startColor 0, @endColor 100%);
+
+    background-repeat: repeat-x;
+}

@@ -1,0 +1,43 @@
+@import '../../../style/functions.less';
+
+.in_jMenu-back,
+a.in_jMenu-toggleBtn { display: none; }
+.in_jMenu-container { display: inline; }
+
+.mainNav {
+    > li {
+        > .in_jMenu-secondLevel{
+            position:absolute; display: none; z-index: 100;
+        }
+        &.in_jMenu-open > .in_jMenu-secondLevel{
+            display: block; 
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    a.in_jMenu-toggleBtn { .inline-block; }
+    .in_jMenu-back  { display: inherit; }
+
+    .in_jMenu-container { display: none; position: absolute; left: 0; right: 0; top: 60px; bottom: 0; background: @responsiveMenuBkg; }
+    .in_jMenu { margin-left: 0; cursor: pointer; }
+    .in_jMenu,
+    .in_jMenu ul { position: absolute; top: 0; left: 0%; right: 0; .margin; margin-left: 100%; .padding; width: 100%; }
+    .in_jMenu ul { display: none; font-size: .78em; }
+    .in_jMenu > li,
+    .in_jMenu li.in_jMenu-item { 
+        display: list-item; .margin; .padding; width: 100%; list-style-type: none; list-style-image: none; background: none; border-bottom: 1px dotted @responsiveMenuColor;
+        font-size: 1.3em; color: @responsiveMenuColor; text-transform: uppercase;
+    }
+    .in_jMenu li.in_jMenu-item a { display: block; padding: @marginSize*1.5px;
+        color: @responsiveMenuColor; }
+    .in_jMenu li.in_jMenu-item a:hover { text-decoration: none; }
+    .in_jMenu li.in_jMenu-node > a{ background: url(../img/fleche-menu-mobile.gif) 95% 50% no-repeat; }
+    .in_jMenu li.in_jMenu-back a { display: block; padding: @marginSize*1.5px @marginSize*3.5px; background: url(../img/ico-retour-mobile.gif) @marginSize*1.5px 50% no-repeat; 
+        font-weight: bold; text-transform: none; color: @responsiveMenuBackColor; }
+
+    .in_jMenu-open { .inline-block; }
+    .in_jMenu-lvl_0.in_jMenu-active { margin-left: 0; }
+    .in_jMenu-active { margin-left: -100%; }
+    .in_jMenu-open > ul { display: block; width: 100%; }
+}

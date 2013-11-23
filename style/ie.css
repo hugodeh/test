@@ -1,0 +1,195 @@
+/*********************************
+****** Globals Parameters ********
+*********************************/
+/* Fonts */
+/* Colors */
+/* Requis */
+/* Site */
+/* Dimensions */
+/*********************************
+************ Functions ***********
+*********************************/
+/*
+ * Functions Margin
+ */
+/*
+ * Functions padding
+ */
+/*
+ * Function Grid
+ */
+/*
+.percent-width ( @width, @parentWidth ) {
+    width: @width / @parentWidth * 100%;
+}
+*/
+/*********************************
+********* Functions CSS2 *********
+*********************************/
+/*
+ * @opacity float compris entre 0 à 1
+ */
+/*********************************
+********* Functions CSS3 *********
+*********************************/
+/*
+ * Functions Border Radius
+ */
+/*
+ * Functions Box Shadow
+ */
+/*
+ * Functions Linear Gradient
+ */
+/*********************************
+******** Redefine Function *******
+*********************************/
+/*********************************
+********* Redefine  Reset ********
+*********************************/
+td p {
+  font-size: 100%;
+}
+/*********************************
+******** Redefine  Columns *******
+*********************************/
+.column {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.flex5050 .column {
+  margin: 0 3.031% 0 0;
+  width: 48.485%;
+}
+.flex5050 .column-2 {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+/*********************************
+********* Redefine  Pages ********
+*********************************/
+.page {
+  text-align: left;
+}
+/*********************************
+************* HEADER *************
+*********************************/
+.nav * {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.logo {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+  float: left;
+  width: 200px;
+  height: 80px;
+}
+.topNav {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+  width: 500px;
+  height: 100%;
+}
+.topNav li {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.topNav a {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.mainNav {
+  clear: both;
+}
+/*********************************
+************* FOOTER *************
+*********************************/
+.itemBot {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+/*********************************
+************* DEFAULT ************
+*********************************/
+.default .secondLevel {
+  background-color: #ffffff;
+}
+/*********************************
+************* BANDED *************
+*********************************/
+.banded .flex3070 .flex5050 {
+  background-color: sandybrown;
+}
+/*********************************
+************** BLOG **************
+*********************************/
+.blog .readNext {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.blog h1 {
+  clear: both;
+}
+.blog .flex7525 .flex5050 .DIV-last {
+  width: 49%;
+}
+/*********************************
+*********** ORBIT HOME ***********
+*********************************/
+.orbitHome .blocfond * {
+  display: inline-block;
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.orbitHome .btnContact {
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+.orbitHome .sliderTop {
+  width: 990px;
+}
+.orbitHome .sliderTopItem {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  behavior: url(/js/htc/boxsizing.htc);
+  width: 990px;
+  padding: 0 100px;
+  border: 10px solid green;
+}
+/*********************************
+************ SIDEBAR *************
+*********************************/
+.sidebar .flex2575 .flex7030 .DIV-last {
+  width: 29%;
+}
+.sidebar .flex2575 .flex5050 .DIV-last {
+  width: 49%;
+}
+.sidebar .flex2575 .flex3070 .DIV-last {
+  width: 69%;
+}

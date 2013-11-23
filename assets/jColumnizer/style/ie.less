@@ -1,0 +1,8 @@
+/*********************************
+******** Redefine Function *******
+*********************************/
+// pour IE: url => http://welcome.totheinter.net/columnizer-jquery-plugin/
+.columns (@nbColumns: 2, @paddingLeft: 3) {
+    columns: @nbColumns;    // IE10, Opera11.1
+    column-gap: @marginSize * @paddingLeft * 1px;
+}
